@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'user',
     'qanda',
 
+    'markdownify',
+    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,3 +134,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+
+LOGIN_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'questions:index'
+LOGOUT_REDIRECT_URL = 'questions:index'
+
+
+MARKDOWINFY_STRIP = False
+MARKDOWNIFY_WHITELIST_TAGS = [
+    'a', 'blockquote', 'code', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+    'h7', 'li', 'ol', 'p', 'strong', 'ul',
+]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

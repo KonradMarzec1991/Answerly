@@ -13,10 +13,10 @@ class Question(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absoulte_url(self):
-        return reverse('questions:question_detail', kwargs={'pk': self.id})
+    def get_absolute_url(self):
+        return reverse('qanda:question_detail', kwargs={'pk': self.id})
 
-    def can_accept_answer(self, user):
+    def can_accept_answers(self, user):
         return user == self.user
 
 
